@@ -1,0 +1,13 @@
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
