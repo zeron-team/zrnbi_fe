@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Menu.css';  // Opcional: para estilos personalizados
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTachometerAlt, faUser, faCogs, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; // Importa los íconos necesarios
+import './Menu.css';
 
 const Menu = () => {
     const navigate = useNavigate();
@@ -16,10 +18,26 @@ const Menu = () => {
     return (
         <div className="menu">
             <ul>
-                <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><Link to="/profile">Perfil</Link></li>
-                <li><Link to="/settings">Configuraciones</Link></li>
-                <li><a href="#logout" onClick={handleLogout}>Salir</a></li> {/* Link de salir */}
+                <li>
+                    <Link to="/dashboard">
+                        <FontAwesomeIcon icon={faTachometerAlt} /> Dashboard
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/profile">
+                        <FontAwesomeIcon icon={faUser} /> Perfil
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/settings">
+                        <FontAwesomeIcon icon={faCogs} /> Configuraciones
+                    </Link>
+                </li>
+                <li>
+                    <a href="#logout" onClick={handleLogout}>
+                        <FontAwesomeIcon icon={faSignOutAlt} /> Salir
+                    </a>
+                </li>
             </ul>
         </div>
     );

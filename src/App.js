@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Settings from './components/Settings';
 import Layout from './components/Layout';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
     return (
@@ -14,10 +15,10 @@ function App() {
                 <Route path="/login" element={<Login />} />
 
                 {/* Páginas envueltas en el Layout */}
-                <Route path="/" element={<Layout><Dashboard /></Layout>} />
-                <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
-                <Route path="/profile" element={<Layout><Profile /></Layout>} />
-                <Route path="/settings" element={<Layout><Settings /></Layout>} />
+                <Route path="/" element={<PrivateRoute><Layout><Dashboard /></Layout></PrivateRoute>} />
+                <Route path="/dashboard" element={<PrivateRoute><Layout><Dashboard /></Layout></PrivateRoute>} />
+                <Route path="/profile" element={<PrivateRoute><Layout><Profile /></Layout></PrivateRoute>} />
+                <Route path="/settings" element={<PrivateRoute><Layout><Settings /></Layout></PrivateRoute>} />
             </Routes>
         </Router>
     );
